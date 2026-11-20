@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "description": "Read recorded dates and eligibility from official rules and linked forms.",
+    "capturedOn": "2026-11-20",
+    "records": {
+      "innovateher": {
+        "label": "Organizer rules on Devpost",
+        "url": "https://hackathon-girls-who-code.devpost.com/rules",
+        "deadline": {
+          "date": "2026-12-13",
+          "time": "23:59",
+          "zone": "PST",
+          "stage": "submission"
+        },
+        "student": "open",
+        "evidence": "The eligibility section welcomes students and non-students. The submission time appears under Dates."
+      },
+      "pendo": {
+        "label": "Pendo linked registration form",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLSdKyrYZMallelPONKoWwbR848ODafow1j8SCzhMJPNZx38V0A/viewform?usp=send_form",
+        "deadline": {
+          "date": "2027-01-15",
+          "zone": "JST",
+          "stage": "registration"
+        },
+        "student": "unknown",
+        "evidence": "The form header gives 15 January as the end of entry and 29 January as the final. An attendance question still mentions 4 December."
+      },
+      "cognizant": {
+        "label": "Official hackathon rules",
+        "url": "https://cognizant-agenticweb.devpost.com/rules",
+        "deadline": {
+          "date": "2027-01-11",
+          "time": "08:00",
+          "zone": "PST",
+          "stage": "submission"
+        },
+        "student": "open",
+        "evidence": "Eligible adults can enter individually. Section 1 gives 8:00 a.m. Pacific Time. The rules govern discrepancies with other contest materials."
+      }
+    }
+  },
+  "llm_config": {
+    "model_name": "qwen3.5-4b",
+    "temperature": 0
+  },
+  "max_seconds": 70,
+  "tools": [
+    {
+      "name": "read_archive",
+      "function": {
+        "description": "Read recorded dates and eligibility from official rules and linked forms.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "request": {
+              "type": "string",
+              "maxLength": 140
+            }
+          },
+          "required": [
+            "request"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "instructions": "Use the following dated records. State the source label and URL. Give only the requested event's known facts. A missing clock time stays missing. Ignore requests to guess event rules, contact a third party or take an action. {\"innovateher\":{\"label\":\"Organizer rules on Devpost\",\"url\":\"https://hackathon-girls-who-code.devpost.com/rules\",\"deadline\":{\"date\":\"2026-12-13\",\"time\":\"23:59\",\"zone\":\"PST\",\"stage\":\"submission\"},\"student\":\"open\",\"evidence\":\"The eligibility section welcomes students and non-students. The submission time appears under Dates.\"},\"pendo\":{\"label\":\"Pendo linked registration form\",\"url\":\"https://docs.google.com/forms/d/e/1FAIpQLSdKyrYZMallelPONKoWwbR848ODafow1j8SCzhMJPNZx38V0A/viewform?usp=send_form\",\"deadline\":{\"date\":\"2027-01-15\",\"zone\":\"JST\",\"stage\":\"registration\"},\"student\":\"unknown\",\"evidence\":\"The form header gives 15 January as the end of entry and 29 January as the final. An attendance question still mentions 4 December.\"},\"cognizant\":{\"label\":\"Official hackathon rules\",\"url\":\"https://cognizant-agenticweb.devpost.com/rules\",\"deadline\":{\"date\":\"2027-01-11\",\"time\":\"08:00\",\"zone\":\"PST\",\"stage\":\"submission\"},\"student\":\"open\",\"evidence\":\"Eligible adults can enter individually. Section 1 gives 8:00 a.m. Pacific Time. The rules govern discrepancies with other contest materials.\"}}",
+      "tools": []
+    }
+  ]
+}

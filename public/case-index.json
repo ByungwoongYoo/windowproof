@@ -1,0 +1,36 @@
+{
+  "capturedOn": "2026-11-20",
+  "deskOrigin": "http://127.0.0.1:8765",
+  "router": "http://127.0.0.1:8765/local-model/v1",
+  "peers": {
+    "listings": {
+      "name": "listing_evidence",
+      "title": "Listing archive",
+      "purpose": "Read recorded dates and eligibility from public event listings.",
+      "url": "http://localhost:8766/listing_evidence"
+    },
+    "rules": {
+      "name": "rules_evidence",
+      "title": "Rules archive",
+      "purpose": "Read recorded dates and eligibility from official rules and linked forms.",
+      "url": "http://[::1]:8767/rules_evidence"
+    }
+  },
+  "cases": [
+    {
+      "id": "innovateher",
+      "title": "InnovateHER",
+      "topic": "Women and girls in technology"
+    },
+    {
+      "id": "pendo",
+      "title": "Pendo Novus Product Challenge",
+      "topic": "AI product improvement"
+    },
+    {
+      "id": "cognizant",
+      "title": "Open Agentic Web Challenge",
+      "topic": "Interoperable browser agents"
+    }
+  ]
+}

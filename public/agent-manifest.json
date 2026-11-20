@@ -1,0 +1,36 @@
+{
+  "brand": "WindowProof",
+  "networks": [
+    {
+      "name": "windowproof",
+      "front_man": "case_coordinator",
+      "hocon": "./windowproof.network.json",
+      "description": "Explain the checked evidence behind a contest deadline or eligibility decision.",
+      "sample_queries": [
+        "Explain the reviewed InnovateHER case."
+      ]
+    }
+  ],
+  "llm_router": {
+    "base_url": "http://127.0.0.1:8765/local-model/v1",
+    "mock": false,
+    "byok_router": "http://127.0.0.1:8765/local-model/v1"
+  },
+  "allowed_peers": [
+    "http://localhost:8766",
+    "http://[::1]:8767"
+  ],
+  "peer_policy": {
+    "mode": "closed"
+  },
+  "deployment": {
+    "mode": "static"
+  },
+  "actions": {
+    "version": 1,
+    "module": "./site-actions.mjs",
+    "agentTools": [
+      "read_comparison"
+    ]
+  }
+}

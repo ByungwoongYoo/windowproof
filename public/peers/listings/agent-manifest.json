@@ -1,0 +1,23 @@
+{
+  "brand": "Listing archive",
+  "networks": [
+    {
+      "name": "listing_evidence",
+      "front_man": "read_archive",
+      "hocon": "./listing_evidence.network.json",
+      "description": "Read recorded dates and eligibility from public event listings."
+    }
+  ],
+  "llm_router": {
+    "base_url": "http://127.0.0.1:8765/local-model/v1",
+    "mock": false,
+    "byok_router": "http://127.0.0.1:8765/local-model/v1"
+  },
+  "allowed_peers": [],
+  "peer_policy": {
+    "mode": "closed"
+  },
+  "deployment": {
+    "mode": "static"
+  }
+}

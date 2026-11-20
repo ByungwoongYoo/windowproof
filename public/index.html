@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light">
+  <title>WindowProof</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="brand" href="./">WindowProof</a>
+    <a class="manifest" href="./agent-manifest.json">Agent manifest</a>
+  </header>
+  <main class="workspace">
+    <aside class="sidebar" aria-labelledby="cases-heading">
+      <h2 id="cases-heading">Archived cases</h2>
+      <nav id="case-list" aria-label="Contest cases"></nav>
+      <p id="capture-date" class="muted"></p>
+    </aside>
+    <section class="desk" aria-labelledby="case-title">
+      <div class="desk-heading">
+        <div>
+          <h1 id="case-title">Contest evidence</h1>
+          <p id="case-topic" class="muted"></p>
+        </div>
+        <button id="check" class="primary" type="button" disabled>Compare sources</button>
+      </div>
+      <div class="comparison" id="comparison">
+        <div id="verdict" class="verdict" data-kind="idle" role="status">
+          <strong id="verdict-title">Ready to compare</strong>
+          <p id="verdict-detail">Choose a case and review both published snapshots.</p>
+        </div>
+        <div id="source-grid" class="sources" hidden></div>
+      </div>
+      <details id="agent-panel" class="agent">
+        <summary>Ask the browser agent</summary>
+        <form id="agent-form">
+          <p>Use your own OpenAI-compatible model router to explain a checked case.</p>
+          <div class="model-fields">
+            <label>Router URL<input id="router" name="router" type="url" required></label>
+            <label>Model<input id="model" name="model" type="text" value="qwen3.5-4b" required></label>
+            <label>Router key <span class="muted">(if required)</span><input id="key" name="key" type="password" autocomplete="off"></label>
+          </div>
+          <label class="option"><input id="peer-agent" type="checkbox"> Ask the rules archive agent as well</label>
+          <button id="ask" type="submit" disabled>Explain this check</button>
+        </form>
+        <div id="agent-answer" role="status"></div>
+      </details>
+    </section>
+  </main>
+  <dialog id="consent" aria-labelledby="consent-title">
+    <form method="dialog">
+      <h2 id="consent-title"></h2>
+      <p id="consent-origin" class="origin"></p>
+      <p id="consent-purpose"></p>
+      <div class="dialog-buttons">
+        <button value="decline" autofocus>Skip source</button>
+        <button value="allow" class="primary">Allow access</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>

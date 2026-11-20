@@ -1,0 +1,62 @@
+{
+  "capturedOn": "2026-11-20",
+  "cases": [
+    {
+      "id": "innovateher",
+      "title": "InnovateHER",
+      "topic": "Women and girls in technology",
+      "listings": {
+        "label": "Devpost event listing",
+        "url": "https://hackathon-girls-who-code.devpost.com/",
+        "deadline": {"date": "2026-12-13", "time": "17:00", "zone": "EST", "stage": "submission"},
+        "student": "required",
+        "evidence": "The eligibility box says Students only."
+      },
+      "rules": {
+        "label": "Organizer rules on Devpost",
+        "url": "https://hackathon-girls-who-code.devpost.com/rules",
+        "deadline": {"date": "2026-12-13", "time": "23:59", "zone": "PST", "stage": "submission"},
+        "student": "open",
+        "evidence": "The eligibility section welcomes students and non-students. The submission time appears under Dates."
+      }
+    },
+    {
+      "id": "pendo",
+      "title": "Pendo Novus Product Challenge",
+      "topic": "AI product improvement",
+      "listings": {
+        "label": "Pendo event page",
+        "url": "https://www.pendo.io/ja-jp/resources/product-agent-for-the-ai-era/",
+        "deadline": {"date": "2026-12-28", "zone": "JST", "stage": "registration"},
+        "student": "unknown",
+        "evidence": "The special event page gives 28 December as the application deadline and 29 January as the final in Shibuya."
+      },
+      "rules": {
+        "label": "Pendo linked registration form",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLSdKyrYZMallelPONKoWwbR848ODafow1j8SCzhMJPNZx38V0A/viewform?usp=send_form",
+        "deadline": {"date": "2027-01-15", "zone": "JST", "stage": "registration"},
+        "student": "unknown",
+        "evidence": "The form header gives 15 January as the end of entry and 29 January as the final. An attendance question still mentions 4 December."
+      }
+    },
+    {
+      "id": "cognizant",
+      "title": "Open Agentic Web Challenge",
+      "topic": "Interoperable browser agents",
+      "listings": {
+        "label": "Devpost event listing",
+        "url": "https://cognizant-agenticweb.devpost.com/",
+        "deadline": {"date": "2027-01-11", "time": "08:00", "zone": "PST", "stage": "submission"},
+        "student": "open",
+        "evidence": "The eligibility box gives age of majority and country exceptions. The deadline is 8:00 a.m. PST."
+      },
+      "rules": {
+        "label": "Official hackathon rules",
+        "url": "https://cognizant-agenticweb.devpost.com/rules",
+        "deadline": {"date": "2027-01-11", "time": "08:00", "zone": "PST", "stage": "submission"},
+        "student": "open",
+        "evidence": "Eligible adults can enter individually. Section 1 gives 8:00 a.m. Pacific Time. The rules govern discrepancies with other contest materials."
+      }
+    }
+  ]
+}

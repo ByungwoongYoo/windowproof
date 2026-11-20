@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "description": "Compare archived public event records and explain discrepancies."
+  },
+  "llm_config": {
+    "model_name": "qwen3.5-4b",
+    "temperature": 0
+  },
+  "max_seconds": 70,
+  "link_labels": {
+    "http://localhost:8766/listing_evidence": "Listing archive",
+    "http://[::1]:8767/rules_evidence": "Rules archive"
+  },
+  "tools": [
+    {
+      "name": "case_coordinator",
+      "function": {
+        "description": "Explain a checked contest comparison from WindowProof.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "request": {
+              "type": "string",
+              "maxLength": 140
+            }
+          },
+          "required": [
+            "request"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "instructions": "Explain comparisons of public contest records, including dates in Seoul and student requirements. The first tool call must be website_read_comparison, even when the visitor requests a peer. When both source cards have Seoul times, state both kst field values exactly. If a user explicitly asks you to check a peer archive, call only the named archive or archives with the event title and requested field in 140 characters or fewer. Never send private text or contact data. Keep the result from the browser comparison authoritative about what was measured. If a peer's output disagrees, state the difference and suggest checking the official page. Don't infer a missing time, claim registration or recommend entering when the two sources contradict each other.",
+      "tools": [
+        "http://localhost:8766/listing_evidence",
+        "http://[::1]:8767/rules_evidence"
+      ]
+    }
+  ]
+}

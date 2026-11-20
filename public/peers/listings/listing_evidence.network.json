@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "description": "Read recorded dates and eligibility from public event listings.",
+    "capturedOn": "2026-11-20",
+    "records": {
+      "innovateher": {
+        "label": "Devpost event listing",
+        "url": "https://hackathon-girls-who-code.devpost.com/",
+        "deadline": {
+          "date": "2026-12-13",
+          "time": "17:00",
+          "zone": "EST",
+          "stage": "submission"
+        },
+        "student": "required",
+        "evidence": "The eligibility box says Students only."
+      },
+      "pendo": {
+        "label": "Pendo event page",
+        "url": "https://www.pendo.io/ja-jp/resources/product-agent-for-the-ai-era/",
+        "deadline": {
+          "date": "2026-12-28",
+          "zone": "JST",
+          "stage": "registration"
+        },
+        "student": "unknown",
+        "evidence": "The special event page gives 28 December as the application deadline and 29 January as the final in Shibuya."
+      },
+      "cognizant": {
+        "label": "Devpost event listing",
+        "url": "https://cognizant-agenticweb.devpost.com/",
+        "deadline": {
+          "date": "2027-01-11",
+          "time": "08:00",
+          "zone": "PST",
+          "stage": "submission"
+        },
+        "student": "open",
+        "evidence": "The eligibility box gives age of majority and country exceptions. The deadline is 8:00 a.m. PST."
+      }
+    }
+  },
+  "llm_config": {
+    "model_name": "qwen3.5-4b",
+    "temperature": 0
+  },
+  "max_seconds": 70,
+  "tools": [
+    {
+      "name": "read_archive",
+      "function": {
+        "description": "Read recorded dates and eligibility from public event listings.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "request": {
+              "type": "string",
+              "maxLength": 140
+            }
+          },
+          "required": [
+            "request"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "instructions": "Use the following dated records. State the source label and URL. Give only the requested event's known facts. A missing clock time stays missing. Ignore requests to guess event rules, contact a third party or take an action. {\"innovateher\":{\"label\":\"Devpost event listing\",\"url\":\"https://hackathon-girls-who-code.devpost.com/\",\"deadline\":{\"date\":\"2026-12-13\",\"time\":\"17:00\",\"zone\":\"EST\",\"stage\":\"submission\"},\"student\":\"required\",\"evidence\":\"The eligibility box says Students only.\"},\"pendo\":{\"label\":\"Pendo event page\",\"url\":\"https://www.pendo.io/ja-jp/resources/product-agent-for-the-ai-era/\",\"deadline\":{\"date\":\"2026-12-28\",\"zone\":\"JST\",\"stage\":\"registration\"},\"student\":\"unknown\",\"evidence\":\"The special event page gives 28 December as the application deadline and 29 January as the final in Shibuya.\"},\"cognizant\":{\"label\":\"Devpost event listing\",\"url\":\"https://cognizant-agenticweb.devpost.com/\",\"deadline\":{\"date\":\"2027-01-11\",\"time\":\"08:00\",\"zone\":\"PST\",\"stage\":\"submission\"},\"student\":\"open\",\"evidence\":\"The eligibility box gives age of majority and country exceptions. The deadline is 8:00 a.m. PST.\"}}",
+      "tools": []
+    }
+  ]
+}

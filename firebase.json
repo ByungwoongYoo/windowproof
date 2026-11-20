@@ -1,0 +1,50 @@
+{
+  "hosting": [
+    {
+      "target": "windowproof-desk",
+      "public": "public",
+      "ignore": ["peers/**", "**/.*", "**/node_modules/**"],
+      "headers": [
+        {
+          "source": "**",
+          "headers": [
+            { "key": "Access-Control-Allow-Origin", "value": "*" },
+            { "key": "Cache-Control", "value": "no-cache" }
+          ]
+        },
+        {
+          "source": "**/*.mjs",
+          "headers": [{ "key": "Content-Type", "value": "text/javascript; charset=utf-8" }]
+        }
+      ]
+    },
+    {
+      "target": "windowproof-listings",
+      "public": "public/peers/listings",
+      "ignore": ["**/.*", "**/node_modules/**"],
+      "headers": [
+        {
+          "source": "**",
+          "headers": [
+            { "key": "Access-Control-Allow-Origin", "value": "*" },
+            { "key": "Cache-Control", "value": "no-cache" }
+          ]
+        }
+      ]
+    },
+    {
+      "target": "windowproof-rules",
+      "public": "public/peers/rules",
+      "ignore": ["**/.*", "**/node_modules/**"],
+      "headers": [
+        {
+          "source": "**",
+          "headers": [
+            { "key": "Access-Control-Allow-Origin", "value": "*" },
+            { "key": "Cache-Control", "value": "no-cache" }
+          ]
+        }
+      ]
+    }
+  ]
+}
